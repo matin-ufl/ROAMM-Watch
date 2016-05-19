@@ -3,7 +3,7 @@ function startUV() {
 	var ultravioletSensor = webapis.sensorservice.getDefaultSensor("ULTRAVIOLET");
 	
 	var rate = 60000;
-	var store = localStorage.getItem("com.uf.agingproject.uvRate");
+	var store = localStorage.getItem(KEY_RATE_UV);
 	if(store){
 		rate = parseInt(store)*1000;
 	}
@@ -37,13 +37,13 @@ function startUV() {
 		startUV();
 	}, rate);
 	
-	sessionStorage.setItem("com.uf.agingproject.uvInterval", interval);
+	sessionStorage.setItem(KEY_INTERVAL_UV, interval);
 	
 };
 
 function stopUV(){
-	clearInterval(parseInt(sessionStorage.getItem("com.uf.agingproject.uvInterval")));
+	clearInterval(parseInt(sessionStorage.getItem(KEY_INTERVAL_UV)));
 	document.getElementById("uv").innerHTML = "OFF";
 	
-	sessionStorage.removeItem("com.uf.agingproject.uvInterval");
+	sessionStorage.removeItem(KEY_INTERVAL_UV);
 }

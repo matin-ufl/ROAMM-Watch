@@ -1,7 +1,7 @@
 function startPressure() {
 	
 	var rate = 60000;
-	var store = localStorage.getItem("com.uf.agingproject.pressureRate");
+	var store = localStorage.getItem(KEY_RATE_PRESSURE);
 	if(store){
 		rate = parseInt(store)*1000;
 	}
@@ -37,15 +37,15 @@ function startPressure() {
 		startPressure2();
 	}, rate);
 	
-	sessionStorage.setItem("com.uf.agingproject.pressureInterval", interval);
+	sessionStorage.setItem(KEY_INTERVAL_PRESSURE, interval);
 	
 
 	
 };
 
 function stopPressure(){
-	clearInterval(parseInt(sessionStorage.getItem("com.uf.agingproject.pressureInterval")));
+	clearInterval(parseInt(sessionStorage.getItem(KEY_INTERVAL_PRESSURE)));
 	document.getElementById("pressure").innerHTML = "OFF";
 	
-	sessionStorage.removeItem("com.uf.agingproject.pressureInterval");
+	sessionStorage.removeItem(KEY_INTERVAL_PRESSURE);
 }

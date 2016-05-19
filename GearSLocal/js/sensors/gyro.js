@@ -23,7 +23,7 @@ function startGyro() {
 	});
 	
 	var rate = 1000;
-	var store = localStorage.getItem("com.uf.agingproject.gyroRate");
+	var store = localStorage.getItem(KEY_RATE_GYRO);
 	if(store){
 		rate = parseInt(store);
 	}
@@ -39,13 +39,13 @@ function startGyro() {
 		count = 0;
 	}, rate);
 	
-	sessionStorage.setItem("com.uf.agingproject.gyroInterval", interval);
+	sessionStorage.setItem(KEY_INTERVAL_GYRO, interval);
 }
 
 function stopGyro(){
-	clearInterval(parseInt(sessionStorage.getItem("com.uf.agingproject.gyroInterval")));
+	clearInterval(parseInt(sessionStorage.getItem(KEY_INTERVAL_GYRO)));
 	document.getElementById("gyro").innerHTML = "OFF";
 	
-	sessionStorage.removeItem("com.uf.agingproject.gyroInterval");
+	sessionStorage.removeItem(KEY_INTERVAL_GYRO);
 }
 

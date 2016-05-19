@@ -24,24 +24,17 @@ function startAccel() {
 		xArray.push(x);
 		yArray.push(y);
 		zArray.push(z);
-		/*
-		 * Matin
-		 * The below code can be removed. But since we do not have a conrol version mechanism here, I keep them for now.
-		 */
 		
 		// keep a running average of all the values retrieved by the sensor
 		tempx = ((tempx*(count-1)) + x)/count;
 		tempy = ((tempy*(count-1)) + y)/count;
 		tempz = ((tempz*(count-1)) + z)/count;
 		
-		// trying to also buffer the data
-		// have not had much success, cant efficiently then store all the values to the local storage
-		accelArray.push({timestamp:new Date(),x:x,y:y,z:z});
-		
 	};
 	
 	window.addEventListener('devicemotion', function(e){
-		saveAccel([e.accelerationIncludingGravity.x, e.accelerationIncludingGravity.y, e.accelerationIncludingGravity.z]);
+		// In this case, all the motions would be stored
+		//saveAccel([e.accelerationIncludingGravity.x, e.accelerationIncludingGravity.y, e.accelerationIncludingGravity.z]);
 		handleAccelData(
 				e.accelerationIncludingGravity.x,
 				e.accelerationIncludingGravity.y,
@@ -53,23 +46,18 @@ function startAccel() {
 	
 	var rate = 1000,
 	// The rate set on the portal is in milliseconds
-	store = localStorage.getItem("com.uf.agingproject.accelRate");
+	store = localStorage.getItem(KEY_RATE_ACCELEROMETER);
 	if(store){
 		rate = parseInt(store);
 	}
-	//TODO: [Epoch length] Change the following line
-	var manualAccelRate = 1000;
 	var interval = window.setInterval(function(){
 		document.getElementById("accel").innerHTML = (tempx+"").substring(0,4) + "," + (tempy+"").substring(0,4) + "," + (tempz+"").substring(0,4);
+
+		// Motion at given rate would be averaged and stored.
+		saveAccel([tempx, tempy, tempz]);
 		
-		//console.log(accelArray);
-		
-		/*
-		 * Matin
-		 * So instead of the average values, RMS values are put into the local database.
-			saveAccel([tempx, tempy, tempz]);
-		*/
-		calculateAxisRMS_clearArrays();
+		// So instead of the average values, RMS values are put into the local database.
+		//calculateAxisRMS_clearArrays();
 		//saveAccel([xRMS, yRMS, zRMS]);
 		
 		// clear buffer and reset values
@@ -79,9 +67,9 @@ function startAccel() {
 		tempy = 0;
 		tempz = 0;
 		count = 0;
-	}, manualAccelRate);
+	}, rate);
 	
-	sessionStorage.setItem("com.uf.agingproject.accelInterval", interval);
+	sessionStorage.setItem(KEY_RATE_ACCELEROMETER, interval);
 	
 }
 
@@ -135,10 +123,10 @@ function calculateAverage(arr) {
 	return 0;
 }
 function stopAccel(){
-	clearInterval(parseInt(sessionStorage.getItem("com.uf.agingproject.accelInterval")));
+	clearInterval(parseInt(sessionStorage.getItem(KEY_INTERVAL_ACCELEROMETER)));
 	document.getElementById("accel").innerHTML = "OFF";
 	
-	sessionStorage.removeItem("com.uf.agingproject.accelInterval");
+	sessionStorage.removeItem(KEY_INTERVAL_ACCELEROMETER);
 }
 
 // Working on a function to calibrate the watch to a flat surface

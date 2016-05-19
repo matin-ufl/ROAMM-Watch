@@ -1,23 +1,21 @@
 // ENTRY POINT OF THE APPLICATION
 $(document).ready(function(){
+	console.log("[MATIN] ROAMM project started.");
 	
 	// Make it so swiping down from the top closes the app
 	document.addEventListener('tizenhwkey', function(e) {
 		if(e.keyName == "back"){
+			
 			tizen.application.getCurrentApplication().exit();
 		}
 	});
 
-	console.log("[MATIN] ROAMM project started.");
 	
 	// tap the screen to send local data
 	$('.ui-page').on("click", function(){
-		console.log("sending local data to remote server");
-		batchSendLocalData11();
-	//these are old versions of the export protocol
-		//batchSendLocalData1();
-		//sendLocalData();
-		//alert("Request Completed");
+		console.log("[MATIN] data transmission started.");
+		console.log("[M A T I N] ---->>>>> " + thoroughLog);
+		dataTransmission_saveLocally();
 	});
 
 	// get a reference to the IDB database that holds all permanent local data
@@ -26,49 +24,30 @@ $(document).ready(function(){
 
 	// retrieves the config file from the server and starts all sensors
 	console.log("[MATIN] Requesting sensors to start.");
-	startSensors();
-
-	/*
-	window.setInterval(function(){
+	if(RECEIVE_CONFIG_FROM_SERVER) {
+		thoroughLog += "Config parameters obtained from the Server. ";
 		startSensors();
-	}, 30000);
-	 */
+	} else {
+		thoroughLog += "Config parameters read from the watch. ";
+		startSensors_locally();
+	}
 
 	$("button").click(function(){
-
+		
 	});
 
-	//while(!localStorage.getItem("com.uf.agingproject.exportRate")){}
-
-
-	/*
-	console.log("Setting automatic export interval");
-
-	window.setInternal(function(){
-		console.log("30 mins: sending local data to remote server");
-		sendLocalData();
-	}, parseInt(localStorage.getItem("com.uf.agingproject.exportRate")) * 60000);
-
-	if(localStorage.getItem("com.uf.agingproject.data")){
-		$("#status").css("background","orange");
-	}
-	else{
-		$("#status").css("background","green");
-	}
-	*/
-
+	document.getElementById("watchID").innerHTML = localStorage.getItem(KEY_WATCH_ID);
+	
 	var battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery;
 
 	// Check if its night time every hour. If so, automatically begin data export
 	window.setInterval(function(){
 		var now = new Date();
 		if(battery.charging){
-			//batchSendLocalData1();
-			batchSendLocalData11();
+			dataTransmission_saveLocally();
 		}
 		else if(battery.level > 0.50 && (now.getHours() > 22 || now.getHours() < 8)){
-			//batchSendLocalData1();
-			batchSendLocalData11();
+			dataTransmission_saveLocally();
 		}
 	},3600000);
 	

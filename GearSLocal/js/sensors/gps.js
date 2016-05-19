@@ -9,8 +9,8 @@ function gotCoords(position){
 	console.log("Got coordinates!");
 	GPSLock = true;
 	if(position.coords){
-		var lat = sessionStorage.getItem("com.uf.agingproject.locLat")
-		,lon = sessionStorage.getItem("com.uf.agingproject.locLat");
+		var lat = sessionStorage.getItem(KEY_GPS_LATITUDE)
+		,lon = sessionStorage.getItem(KEY_GPS_LONGTITUDE);
 
 		if(position.coords.latitude !== lat && position.coords.longitude !== lon){
 			console.log("location changed " + position.coords.latitude + "," + position.coords.longitude);
@@ -75,7 +75,7 @@ function stopGPS(){
 	navigator.geolocation.clearWatch(gpsInterval);
 	document.getElementById("coordinates").innerHTML = "OFF";
 
-	sessionStorage.removeItem("com.uf.agingproject.gpsInterval");
+	sessionStorage.removeItem(KEY_INTERVAL_GPS);
 	GPSLock = false;
 }
 
@@ -85,7 +85,7 @@ function startGPS(){
 		runGPS();
 	}
 	else{
-		rate = parseInt(localStorage.getItem("com.uf.agingproject.locationRate")) * 1000;
+		rate = parseInt(localStorage.getItem(KEY_RATE_GPS)) * 1000;
 		console.log("GPS polling at " + rate + " milliseconds");
 		var interval = window.setInterval(function(){
 			getLoc();
@@ -94,6 +94,6 @@ function startGPS(){
 			},90000);
 		},rate);
 
-		sessionStorage.setItem("com.uf.agingproject.gpsInterval", interval);
+		sessionStorage.setItem(KEY_INTERVAL_GPS, interval);
 	}
 }

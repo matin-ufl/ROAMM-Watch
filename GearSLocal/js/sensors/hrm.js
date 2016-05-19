@@ -31,7 +31,7 @@ function startHeartrate() {
 	
 	var rate = 60;
 	// The rate set on the portal is in seconds
-	var store = localStorage.getItem("com.uf.agingproject.heartrateRate");
+	var store = localStorage.getItem(KEY_RATE_HEART_RATE);
 	if(store){
 		rate = parseInt(store);
 	}
@@ -50,15 +50,15 @@ function startHeartrate() {
 		console.log("HRM polling at " + rate*1000 + " milliseconds");
 		
 		document.getElementById("heartrate").innerHTML = "N/A";
-		sessionStorage.setItem("com.uf.agingproject.heartrateInterval", interval);
+		sessionStorage.setItem(KEY_INTERVAL_HEART_RATE, interval);
 		$("#hrmActive").css("background","red");
 	}
 
 };
 
 function stopHeartrate(){
-	clearInterval(parseInt(sessionStorage.getItem("com.uf.agingproject.heartrateInterval")));
+	clearInterval(parseInt(sessionStorage.getItem(KEY_INTERVAL_HEART_RATE)));
 	document.getElementById("heartrate").innerHTML = "OFF";
 	
-	sessionStorage.removeItem("com.uf.agingproject.heartrateInterval");
+	sessionStorage.removeItem(KEY_INTERVAL_HEART_RATE);
 }

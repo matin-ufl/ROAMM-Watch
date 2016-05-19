@@ -9,7 +9,7 @@ function startBattery() {
 	saveBattery(battery.level * 100);
 	
 	var rate = 30000;
-	var store = localStorage.getItem("com.uf.agingproject.batteryRate");
+	var store = localStorage.getItem(KEY_RATE_BATTERY);
 	if(store){
 		rate = parseInt(store)*1000;
 	}
@@ -21,13 +21,13 @@ function startBattery() {
 		saveBattery(battery.level * 100);
 	},rate);
 	
-	sessionStorage.setItem("com.uf.agingproject.batteryInterval", interval);
+	sessionStorage.setItem(KEY_INTERVAL_BATTERY, interval);
 	
 }
 
 function stopBattery(){
-	clearInterval(parseInt(sessionStorage.getItem("com.uf.agingproject.batteryInterval")));
+	clearInterval(parseInt(sessionStorage.getItem(KEY_INTERVAL_BATTERY)));
 	document.getElementById("battery").innerHTML = "OFF";
 	
-	sessionStorage.removeItem("com.uf.agingproject.batteryInterval");
+	sessionStorage.removeItem(KEY_INTERVAL_BATTERY);
 }

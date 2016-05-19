@@ -2,25 +2,23 @@
 var globalData;
 var dataToFile;
 
-function batchSendLocalData11(){
+function dataTransmission_saveLocally(){
 	try {
 		console.log("[Matin] I GOT HERE! x0");
 		var database = getDatabase();
 
 		var onsuccess = function(array){
-			// Matin
-			console.log("[Matin] I GOT HERE! x1");
-			dataToFile = array.slice();
-			globalData = array;
-			console.log("[Matin] I GOT HERE! x2");
-			writeDataLocally();
-			//batchSendLocalData_andClearStorageAfterwards();
-			// Matin
-
-			// Old send data. Worked for happy scenario only. Should be removed if the above code works.
-			globalData = array;
+			if(SAVE_LOCALLY) {
+				console.log("[MATIN] saving files locally on the watch.");
+				dataToFile = array.slice();
+				writeDataLocally();
+			}
+			if(SEND_TO_SERVER) {
+				console.log("[MATIN] sending data (recursively) to the server.");
+				globalData = array;
+				sendDataToServer();
+			}
 			clearDB();
-			//batchSendLocalData2();
 		},
 
 		onerror = function(error){
@@ -34,7 +32,7 @@ function batchSendLocalData11(){
 }
 
 // USED, recursive helper function to send 150 items at a time via HTTP POST
-function batchSendLocalData2() {
+function sendDataToServer() {
 
 	if (globalData.length === 0){
 		console.log("Data export complete");
@@ -53,7 +51,7 @@ function batchSendLocalData2() {
 	
 	console.log(sendingArray);
 
-	$.post("https://cise.ufl.edu/~snair/consumedata.php",
+	$.post(URL_POST_DATA,
 			{
 		data : JSON.stringify(sendingArray)
 			}, 
@@ -69,67 +67,6 @@ function batchSendLocalData2() {
 			});
 }
 
-/**
- * This function depends on the <b>globalData</b> (which is filled with local database data), send <i>k = 150</i> rows to the server at a time. After sending every data, it clears the database.
- * @author matinkheirkhahan
- */
-function batchSendLocalData_andClearStorageAfterwards() {
-
-	console.log("[Matin] Sending data started...");
-	kRows = 150;
-	maxNoOfAttempts = 5;
-	while(globalData.length > 0) {
-
-		// pop top 150 values
-		var sendingArray = [];
-
-		while(sendingArray.length < kRows && globalData.length > 0){
-			sendingArray.push(globalData[0]);
-			globalData.shift();
-		}
-		console.log("[Matin] A package of " + kRows + " rows is being sent...");
-		sendFlag = false;
-		attemptsNo = 0;
-		while(!sendFlag && attemptsNo < maxNoOfAttempts) {
-			sendFlag = batchSendLocalData_kRowsAtATime(sendingArray);
-			attemptsNo++;
-		}
-		if(!sendFlag) {
-			console.log("[Matin] Some data could not be sent to the server in " + maxNoOfAttempts + " tries. Data should not be cleared.");
-			return;
-		}
-	}
-	console.log("Data export complete");
-	clearDB();
-}
-
-/**
- * Gets an array (a portion of data obtained from local database) and sends them all to the server.
- * While sending the data, the sign is yellow. If everything goes correctly, the sign turns green, otherwise, it becomes red.
- * @returns true if everything is send to the server. Otherwise returns false.
- * @author matinkheirkhahan
- * @param kRowsData
- */
-function batchSendLocalData_kRowsAtATime(kRowsData) {
-	$("#status").css("background","yellow");
-
-	console.log(kRowsData);
-
-	$.post("https://cise.ufl.edu/~snair/consumedata.php",
-			{
-		data : JSON.stringify(kRowsData)
-			}, 
-			function(data, status){
-				console.log("Data: " + data + "\nStatus: " + status);
-				$("#status").css("background","green");
-				return true;
-			})
-			.fail(function(data,status){
-				console.log("Data: " + data + "\nStatus: " + status);
-				$("#status").css("background","red");
-				return false;
-			});
-}
 
 /**
  * This function is called whenever the data is being sent to the server.<br>

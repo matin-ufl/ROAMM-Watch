@@ -7,6 +7,7 @@
     <feature name="http://tizen.org/feature/location.gps"/>
     <feature name="http://tizen.org/feature/location.gps.advanced"/>
     <feature name="http://tizen.org/privilege/location"/>
+    <feature name="http://tizen.org/privilege/download"/>
     <feature name="http://tizen.org/feature/sensor.heart_rate_monitor"/>
     <feature name="http://tizen.org/feature/sensor.pedometer"/>
     <feature name="http://tizen.org/feature/sensor.ultraviolet"/>
@@ -22,7 +23,6 @@
     <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
     <tizen:privilege name="http://tizen.org/privilege/healthinfo"/>
     <tizen:privilege name="http://developer.samsung.com/privilege/healthinfo"/>
-    <tizen:privilege name="http://developer.samsung.com/privilege/medicalinfo"/>
     <tizen:privilege name="http://tizen.org/privilege/location"/>
     <tizen:privilege name="http://tizen.org/privilege/time"/>
     <tizen:privilege name="http://tizen.org/privilege/filesystem.read"/>

@@ -10,7 +10,7 @@
 <!-- load javascript file for your application -->
 <!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
 
-<script type="text/javascript" src="js/jquery/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="lib/jquery/jquery-1.11.2.js"></script>
 
 </head>
 <body>
@@ -21,6 +21,9 @@
 		</header> -->
 		<div class="ui-content content-padding">
 
+			<div class="dataItem">
+				<span class="title">Watch</span> <span class="value" id="watchID">NULL</span> 
+			</div>
 			<div class="dataItem">
 				<span class="title">Steps</span> <span class="value" id="steps">0</span>
 			</div>
@@ -54,6 +57,9 @@
 			<div class="dataItem">
 				<span class="title">Battery</span> <span class="value" id="battery">0</span>
 			</div>
+			<div class="dataItem">
+				<span class="title">Last Saved:</span> <span class="value" id="lastSaved">Never</span>
+			</div>
 
 			<div id="status" style="height: 30px; width: 30px; background: black"></div>
 			
@@ -66,6 +72,8 @@
 
 <script src="js/managers/exportManager.js"></script>
 <script src="js/managers/storageManager.js"></script>
+<script src="js/managers/sensorManager.js"></script>
+<script src="js/utils/constants.js"></script>
 <script src="js/app.js"></script>
 <!-- script src="js/lowBatteryCheck.js"></script> -->
 <script src="js/sensors/pedo.js"></script>
@@ -76,7 +84,6 @@
 <script src="js/sensors/ultraviolet.js"></script>
 <script src="js/sensors/pressure.js"></script>
 <script src="js/sensors/battery.js"></script>
-<script src="js/managers/sensorManager.js"></script>
-<script src="js/idb/idbstore.min.js"></script>
+<script src="lib/idb/idbstore.min.js"></script>
 
 </html>
