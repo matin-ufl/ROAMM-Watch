@@ -2,7 +2,7 @@
 var WATCH_ID = "4405"; //Bluetooth ID
 var RECEIVE_CONFIG_FROM_SERVER = false;
 var SAVE_LOCALLY = true;
-var SEND_TO_SERVER = false;
+var SEND_TO_SERVER = true;
 var SAMPLING_RATE = 1000 / 10; //10 Hz
 var RAW_MODE = true; // No variable construction
 

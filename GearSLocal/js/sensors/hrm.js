@@ -16,9 +16,8 @@ function startHeartrate() {
 	
 	// hrm active for 30 seconds to get a reading
 	function startHR(){
-		console.log("start HR monitor");
 		window.webapis.motion.start("HRM", onchangedCB);
-		
+		thoroughLog += "Heart Rate monitor is working. "
 		$("#hrmActive").css("background","green");
 		
 		setTimeout(function(){
@@ -29,30 +28,22 @@ function startHeartrate() {
 		}, 30000);
 	}
 	
-	var rate = 60;
+	var rate = HEART_RATE_RATE; // One minute - default
 	// The rate set on the portal is in seconds
 	var store = localStorage.getItem(KEY_RATE_HEART_RATE);
 	if(store){
 		rate = parseInt(store);
 	}
 
-	if(localStorage.getItem("com.uf.agingproject.heartrateContinuous") == "true"){
-		console.log("start HR monitor CONTINUOUS");
-		window.webapis.motion.start("HRM", onchangedCB);
-		
-		$("#hrmActive").css("background","green");
-	}
-	else{
-		var interval = window.setInterval(function(){
-			startHR();
-		}, rate*1000);
-		
-		console.log("HRM polling at " + rate*1000 + " milliseconds");
-		
-		document.getElementById("heartrate").innerHTML = "N/A";
-		sessionStorage.setItem(KEY_INTERVAL_HEART_RATE, interval);
-		$("#hrmActive").css("background","red");
-	}
+	var interval = window.setInterval(function(){
+		startHR();
+	}, rate);
+
+	console.log("HRM polling at " + rate + " milliseconds");
+
+	document.getElementById("heartrate").innerHTML = "N/A";
+	sessionStorage.setItem(KEY_INTERVAL_HEART_RATE, interval);
+	$("#hrmActive").css("background","red");
 
 };
 

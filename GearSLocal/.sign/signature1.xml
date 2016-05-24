@@ -8,7 +8,7 @@
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>Lf2+n8NPCHzRNWfGGd1bd8VZodgjcR8AE1mXv2zmv+o=</DigestValue>
+<DigestValue>YB1AP30M3Mumod4Q5YFn4jdmYEr/HsiEodn+l3vOC9M=</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -44,15 +44,15 @@
 </Reference>
 <Reference URI="js%2Fmanagers%2FsensorManager.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>x+fQzUfNRIDVZs+pPoo5bLjsOJqGxWCsSP9Jij0Ey9Y=</DigestValue>
+<DigestValue>/6UdV0PQoP73hgCOKhCjmx0sMbErtl8TF7Qn5zlcvXM=</DigestValue>
 </Reference>
 <Reference URI="js%2Fmanagers%2FstorageManager.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>9CYXJnDtbJ1EeP+WjIzjbvLy5h0r1eFO4FB3Z2wNrpw=</DigestValue>
+<DigestValue>40HCliTc3x3h1/8f1vcYAtNJrl0uzBJzrs6RGsjZbIM=</DigestValue>
 </Reference>
 <Reference URI="js%2Fsensors%2Faccel.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>Mp0EBXqxOQ16d4bcIQIzd973CQM5aTyqoFX5EPs9xEM=</DigestValue>
+<DigestValue>+SgOJvssUDAjwPuvrDewcxk6vBLRFSkowXvi+MfyI9o=</DigestValue>
 </Reference>
 <Reference URI="js%2Fsensors%2Fbattery.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -68,7 +68,7 @@
 </Reference>
 <Reference URI="js%2Fsensors%2Fhrm.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>sbKGgzewY3mmqrKxvIRlnE/zEYuYZBcR6+u2X65+9jY=</DigestValue>
+<DigestValue>OFRb9bnZr2pqed4acxq8B8axfmkTry62Js1nO/978+g=</DigestValue>
 </Reference>
 <Reference URI="js%2Fsensors%2Fpedo.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -84,7 +84,7 @@
 </Reference>
 <Reference URI="js%2Futils%2Fconstants.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>2corpOgoAtlcpG0hRsttmYcaxrPe4iLSStmM65rktSA=</DigestValue>
+<DigestValue>tHDCg0vRteJM89MUBM9luKCDUbauKq83EAfD09uLjRY=</DigestValue>
 </Reference>
 <Reference URI="lib%2Fidb%2Fidbstore.min.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -2575,11 +2575,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-KytreA7kROjlj2/Q6BReltK124yBBzZPze9tbWRI7whwlq1d+BIeZLUknE2xesgcnEcGiTgUs1Xj
-jGn9zizOtaP2l8y3aQFwuSR5FPEnCMSQI+Mp684NJDxoJRmtgp5rioujQLF3Ng6Gk6b5uw4yXUgB
-cxAsrszG6a0FNjgsw5SmQY2acmQN20P1apqUvqPlVDZZUQiR2OyowdI0rVxts+O+4DLsZTaDjkrD
-puW29TfN16SHLqVp3tpugS8AeanmLqFksb46aGNMQ8k+NuwOpItdW4nIcoh/oLOEOjVnsFrWxuSq
-IFKemfH6Z1iUS26MWXluXeXoyH5ZUn7Lyi3RuA==
+AJepTR7OTQE/vRsbpXDjr26hC4YRIKQwZAFpTQayVzEur9JnZN0NInZATgApVPHwJY9i6qLLKDDe
+SQg8OSgBz2+2zq0/pF8fqLUF7mDWarBaPZGv9i5BtZMZMvqU3ucHf/OYLvZfH+G5RO5xPgKOB23j
+087n0qYxPjQz1QHC/jLNppfMN022ar6BsMaX2PPxeiKxOEUoJXSPL8OlAQFa7tJm3ChGvKFVe+HB
+PJ/+pHYl2yURbndlyWGQ/jH/CfYAhbtHtpBER0ieVcy9WdMdhaBGlg/9zECKCAfMX6TjTk+BIYcZ
+6B6Gg2al3qDA33ABykqP0GZnUoEqrm1It9dRtQ==
 </SignatureValue>
 <KeyInfo>
 <X509Data>
