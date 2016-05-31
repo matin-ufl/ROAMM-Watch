@@ -129,13 +129,4 @@ function stopAccel(){
 	sessionStorage.removeItem(KEY_INTERVAL_ACCELEROMETER);
 }
 
-// Working on a function to calibrate the watch to a flat surface
-// Doesn't do anything just yet
-function calibrateAccel(){
-	var offsetX = 0 - tempx,
-	offsetY = 0 - tempy,
-	offsetZ = 9.8 - tempz;
-	
-	console.log("offsets: " + offsetX + "," + offsetY + "," + offsetZ);
-}
 

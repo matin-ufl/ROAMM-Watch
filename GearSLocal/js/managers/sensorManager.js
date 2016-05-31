@@ -72,6 +72,15 @@ function startSensors(){
 		else{
 			stopGPS();
 		}
+		
+		// Start pressure
+		if(json.pressure_active === true) {
+			if(!sessionStorage.getItem(KEY_INTERVAL_PRESSURE)) {
+				startPressure();
+			}
+		} else {
+			stopPressure();
+		}
 
 		// Start battery monitoring
 		if(json.battery_active === true){
@@ -141,6 +150,15 @@ function startSensors_locally() {
 	else{
 		stopGPS();
 	}
+	
+	// Start pressure
+	if(DEFAULT_PRESSURE === true) {
+		if(!sessionStorage.getItem(KEY_INTERVAL_PRESSURE)) {
+			startPressure();
+		}
+	} else {
+		stopPressure();
+	}
 
 	// Start battery monitoring
 	if(DEFAULT_BATTERY === true){
@@ -153,7 +171,5 @@ function startSensors_locally() {
 	}
 
 	// Calls sensorManager to start storing data items to permanent storage
-	if(RAW_MODE){
-		startLocalStorageInterval();
-	}
+	startLocalStorageInterval();
 }

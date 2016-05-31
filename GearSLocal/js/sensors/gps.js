@@ -80,18 +80,19 @@ function stopGPS(){
 }
 
 function startGPS(){
-	if(localStorage.getItem("com.uf.agingproject.locationContinuous") === "true"){
+	// This part is not used because we never need GPS data constantly (MK)
+	if(localStorage.getItem("com.uf.agingproject.locationContinuous") === "true"){ 
 		console.log("GPS set to continuous");
 		runGPS();
 	}
 	else{
-		rate = parseInt(localStorage.getItem(KEY_RATE_GPS)) * 1000;
+		rate = parseInt(localStorage.getItem(KEY_RATE_GPS));
 		console.log("GPS polling at " + rate + " milliseconds");
 		var interval = window.setInterval(function(){
 			getLoc();
 			setTimeout(function(){
 				haltGPS();
-			},90000);
+			},COLLECTION_PERIOD_GPS);
 		},rate);
 
 		sessionStorage.setItem(KEY_INTERVAL_GPS, interval);

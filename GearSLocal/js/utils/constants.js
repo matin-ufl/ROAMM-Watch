@@ -2,7 +2,7 @@
 var WATCH_ID = "4405"; //Bluetooth ID
 var RECEIVE_CONFIG_FROM_SERVER = false;
 var SAVE_LOCALLY = true;
-var SEND_TO_SERVER = true;
+var SEND_TO_SERVER = false;
 var SAMPLING_RATE = 1000 / 10; //10 Hz
 var RAW_MODE = true; // No variable construction
 
@@ -18,12 +18,16 @@ var DEFAULT_BATTERY = true;
 
 var ACCELEROMETER_RATE = SAMPLING_RATE;
 var STEP_RATE = SAMPLING_RATE;
-var HEART_RATE_RATE = 60 * 60 * 1000; // Once every hour
+var HEART_RATE_RATE = 60 * 1000; // Once every hour
 var GYRO_RATE = SAMPLING_RATE;
 var GPS_RATE = 60 * 60 * 1000; // Once every hour
 var UV_RATE = SAMPLING_RATE;
-var PRESSURE_RATE = SAMPLING_RATE;
+var PRESSURE_RATE = 30 * 1000;//SAMPLING_RATE;
 var BATTERY_RATE = 1000; // 1 Hz
+
+var COLLECTION_PERIOD_HEART_RATE = 30000; // 30 seconds on to obtain heart rate data
+var COLLECTION_PERIOD_GPS = 90000; // 90 seconds on for acquiring GPS
+var COLLECTION_PERIOD_PRESSURE = 30000; // 30 seconds for receiving pressure data
 
 // Server addresses
 var URL_GET_CONFIG = "http://roamm.cise.ufl.edu/portal/php/getConfig.php?watchID="+WATCH_ID;

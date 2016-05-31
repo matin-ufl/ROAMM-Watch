@@ -18,7 +18,7 @@
     <feature name="http://tizen.org/feature/network.internet"/>
     <feature name="http://tizen.org/feature/network.push"/>
     <icon src="icon.png"/>
-    <name>ROAMM</name>
+    <name>ROAMM_l</name>
     <preference name="accelActive" value="1" readonly="true"/>
     <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
     <tizen:privilege name="http://tizen.org/privilege/healthinfo"/>

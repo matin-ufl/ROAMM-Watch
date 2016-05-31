@@ -25,7 +25,7 @@ function startHeartrate() {
 			window.webapis.motion.stop("HRM");
 			$("#hrmActive").css("background","yellow");
 			clearHeartrate();
-		}, 30000);
+		}, COLLECTION_PERIOD_HEART_RATE);
 	}
 	
 	var rate = HEART_RATE_RATE; // One minute - default

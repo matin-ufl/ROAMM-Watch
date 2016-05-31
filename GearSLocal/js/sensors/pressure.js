@@ -1,13 +1,13 @@
 function startPressure() {
 	
-	var rate = 60000;
+	var rate = PRESSURE_RATE;
 	var store = localStorage.getItem(KEY_RATE_PRESSURE);
 	if(store){
 		rate = parseInt(store)*1000;
 	}
 
 	function onGetSuccessPRCB(sensorData) {
-		console.log("pressure : " + sensorData.pressure);
+		//console.log("pressure : " + sensorData.pressure);
 		document.getElementById("pressure").innerHTML = sensorData.pressure;
 		savePressure(sensorData.pressure);
 	} 
@@ -18,7 +18,7 @@ function startPressure() {
 	} 
 
 	function onsuccessPRCB() {
-		console.log("start pressure sensor");
+		//console.log("start pressure sensor");
 		webapis.sensorservice.getDefaultSensor("PRESSURE").getPressureSensorData(onGetSuccessPRCB, onerrorPRCB);
 	}
 	
@@ -27,9 +27,9 @@ function startPressure() {
 		pressureSensor.start(onsuccessPRCB);
 		
 		setTimeout(function(){
-			console.log("stop pressure sensor");
+			//console.log("stop pressure sensor");
 			pressureSensor.stop();
-		}, 30000);
+		}, COLLECTION_PERIOD_PRESSURE);
 	}
 	
 

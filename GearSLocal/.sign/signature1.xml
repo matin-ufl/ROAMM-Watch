@@ -8,11 +8,11 @@
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>YB1AP30M3Mumod4Q5YFn4jdmYEr/HsiEodn+l3vOC9M=</DigestValue>
+<DigestValue>Shrl9/Cr0mHj3KBzyR2qID84xuGbc28Mn01S7f9Q0Rc=</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>2LivfNgiht/5Zb2q72clD3rlmXcsYlcDgfmjZOaxP3g=</DigestValue>
+<DigestValue>rE03TRA5AgQIUc1VbUkFOOO+hL74As4hMtJc4oWJ6hM=</DigestValue>
 </Reference>
 <Reference URI="css%2Fstyle.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -44,7 +44,7 @@
 </Reference>
 <Reference URI="js%2Fmanagers%2FsensorManager.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>/6UdV0PQoP73hgCOKhCjmx0sMbErtl8TF7Qn5zlcvXM=</DigestValue>
+<DigestValue>aXgqeHcewEH91bMwJ/8icN7wtdP7GGidUOQJs5KrJKs=</DigestValue>
 </Reference>
 <Reference URI="js%2Fmanagers%2FstorageManager.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -52,7 +52,7 @@
 </Reference>
 <Reference URI="js%2Fsensors%2Faccel.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>+SgOJvssUDAjwPuvrDewcxk6vBLRFSkowXvi+MfyI9o=</DigestValue>
+<DigestValue>xBl3p2gjqEFw8Mn0bFhBQXh20rUdiTGKaiLO0+RlOHo=</DigestValue>
 </Reference>
 <Reference URI="js%2Fsensors%2Fbattery.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -60,7 +60,7 @@
 </Reference>
 <Reference URI="js%2Fsensors%2Fgps.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>tD3+Iu7xRfk56Lh1TypSka6c43lX4aUhzPs3yVadChE=</DigestValue>
+<DigestValue>wFflCExPUuRJN8m5uDaaR9rp3G+W+ovvM1XK4klDTn8=</DigestValue>
 </Reference>
 <Reference URI="js%2Fsensors%2Fgyro.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -68,7 +68,7 @@
 </Reference>
 <Reference URI="js%2Fsensors%2Fhrm.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>OFRb9bnZr2pqed4acxq8B8axfmkTry62Js1nO/978+g=</DigestValue>
+<DigestValue>uaIEW1anT4L9R8u2mXyahh8RJBij+y2Bf/J8rjl76sI=</DigestValue>
 </Reference>
 <Reference URI="js%2Fsensors%2Fpedo.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -76,7 +76,7 @@
 </Reference>
 <Reference URI="js%2Fsensors%2Fpressure.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>YBBkhxN5TFLoUBrMJw+/k4VyxZhDJB7DN3tj7y4tiZA=</DigestValue>
+<DigestValue>p+1tdI2+gTmzzuKYyrWfBpeLA/RpcY6Yk8LRqGo7ITk=</DigestValue>
 </Reference>
 <Reference URI="js%2Fsensors%2Fultraviolet.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -84,7 +84,7 @@
 </Reference>
 <Reference URI="js%2Futils%2Fconstants.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>tHDCg0vRteJM89MUBM9luKCDUbauKq83EAfD09uLjRY=</DigestValue>
+<DigestValue>cLBwAhvYvfXDXDJH4i5PfwYYwuisqbzULdZt9UKalCI=</DigestValue>
 </Reference>
 <Reference URI="lib%2Fidb%2Fidbstore.min.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -2575,11 +2575,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-AJepTR7OTQE/vRsbpXDjr26hC4YRIKQwZAFpTQayVzEur9JnZN0NInZATgApVPHwJY9i6qLLKDDe
-SQg8OSgBz2+2zq0/pF8fqLUF7mDWarBaPZGv9i5BtZMZMvqU3ucHf/OYLvZfH+G5RO5xPgKOB23j
-087n0qYxPjQz1QHC/jLNppfMN022ar6BsMaX2PPxeiKxOEUoJXSPL8OlAQFa7tJm3ChGvKFVe+HB
-PJ/+pHYl2yURbndlyWGQ/jH/CfYAhbtHtpBER0ieVcy9WdMdhaBGlg/9zECKCAfMX6TjTk+BIYcZ
-6B6Gg2al3qDA33ABykqP0GZnUoEqrm1It9dRtQ==
+aTcaw7tQ+3w0G4+h8u16uusrfjqucKrgdHftSGg98v+018YIJx9NNM+Tl2iScdTc3RUlXuwkWSBj
+XkjtA4nd1PqmXqIhVQTqCTJYWBN63VKKvYCjLDFO0+aTT3LWznQD05tr9Nlgv0+vMuPwn9MuVkNc
+t7F77aGMTOIrcJWTzlBMz0HpIyTPk9lw+GuGdmZY39vGsPRzojNqoJvgwRCNPpmF7VdmWFDGzcPC
+h6nN1Z7kjBhxJTg9m+nieQPvXXyVzMfMxG7kCPhnEYbXOLRApv1YVczxNHK4nfgCbVRdbGVEmr9s
+8rkOAXeb+2O1WXThEHyLZFJKJe4I31mCBSurHQ==
 </SignatureValue>
 <KeyInfo>
 <X509Data>
