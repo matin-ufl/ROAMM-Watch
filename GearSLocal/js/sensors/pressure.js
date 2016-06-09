@@ -3,7 +3,7 @@ function startPressure() {
 	var rate = PRESSURE_RATE;
 	var store = localStorage.getItem(KEY_RATE_PRESSURE);
 	if(store){
-		rate = parseInt(store)*1000;
+		rate = parseInt(store);
 	}
 
 	function onGetSuccessPRCB(sensorData) {

@@ -49,22 +49,38 @@ function sendDataToServer() {
 	
 	$("#status").css("background","yellow");
 	
-	console.log(sendingArray);
+	console.log("[MATIN] sending data to this url: " + URL_POST_DATA);
 
-	$.post(URL_POST_DATA,
+	$.post("http://localhost:8080/csvmaker/receivedata",
+			{data: JSON.stringify(sendingArray)},
+			function(res) {
+				if(res == "OK") {
+					console.log("\nStatus: " + res);
+					$("#status").css("background","green");
+					sendDataToServer();
+				} else {
+					console.log("\nStatus: " + res);
+					$("#status").css("background","red");
+					return;
+				}
+			});		  	
+
+
+/*	$.post(URL_POST_DATA,
 			{
 		data : JSON.stringify(sendingArray)
 			}, 
 			function(data, status){
 				console.log("Data: " + data + "\nStatus: " + status);
 				$("#status").css("background","green");
-				batchSendLocalData2();
+				sendDataToServer();
 			})
 			.fail(function(data,status){
 				console.log("Data: " + data + "\nStatus: " + status);
 				$("#status").css("background","red");
 				return;
 			});
+*/
 }
 
 

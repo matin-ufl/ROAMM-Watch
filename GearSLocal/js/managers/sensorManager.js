@@ -65,7 +65,9 @@ function startSensors(){
 
 		// Start GPS
 		if(json.location_active === true){
+			thoroughLog += "GPS-KEY is " + KEY_INTERVAL_GPS + ". ";
 			if(!sessionStorage.getItem(KEY_INTERVAL_GPS)){
+				thoroughLog += "GPS is working. "
 				startGPS();
 			}
 		}
@@ -103,6 +105,7 @@ function startSensors(){
 
 function startSensors_locally() {
 	console.log("[Matin] Using local configuration file.");
+	thoroughLog += "Working sensors [ ";
 	localStorage.setItem(KEY_WATCH_ID, WATCH_ID);
 	localStorage.setItem(KEY_SAMPLING_RATE, SAMPLING_RATE);
 	localStorage.setItem(KEY_RATE_ACCELEROMETER, ACCELEROMETER_RATE);
@@ -114,6 +117,7 @@ function startSensors_locally() {
 	// Start accelerometer
 	if(DEFAULT_ACCELEROMETER === true){
 		if(!sessionStorage.getItem(KEY_INTERVAL_ACCELEROMETER)){
+			thoroughLog += "ACCELEROMETER  ";
 			startAccel();
 		}
 	}
@@ -124,6 +128,7 @@ function startSensors_locally() {
 	// Start gyroscope
 	if(DEFAULT_GYRO === true){
 		if(!sessionStorage.getItem(KEY_INTERVAL_GYRO)){
+			thoroughLog += "GYROSCOPE  ";
 			startGyro();
 		}
 	}
@@ -134,6 +139,7 @@ function startSensors_locally() {
 	// Start heartrate monitor
 	if(DEFAULT_HEART_RATE === true){
 		if(!sessionStorage.getItem(KEY_INTERVAL_HEART_RATE)){
+			thoroughLog += "HEARTRATE  ";
 			startHeartrate();
 		}
 	}
@@ -144,6 +150,7 @@ function startSensors_locally() {
 	// Start GPS
 	if(DEFAULT_GPS === true){
 		if(!sessionStorage.getItem(KEY_INTERVAL_GPS)){
+			thoroughLog += "GPS  ";
 			startGPS();
 		}
 	}
@@ -154,6 +161,7 @@ function startSensors_locally() {
 	// Start pressure
 	if(DEFAULT_PRESSURE === true) {
 		if(!sessionStorage.getItem(KEY_INTERVAL_PRESSURE)) {
+			thoroughLog += "PRESSURE  ";
 			startPressure();
 		}
 	} else {
@@ -170,6 +178,8 @@ function startSensors_locally() {
 		stopBattery();
 	}
 
+	thoroughLog += "]. ";
 	// Calls sensorManager to start storing data items to permanent storage
 	startLocalStorageInterval();
+	
 }

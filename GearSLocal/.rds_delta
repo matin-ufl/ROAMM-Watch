@@ -1,7 +1,6 @@
 #delete
-res/wgt/GearSLocal.wgt
 #add
 #modify
 res/wgt/author-signature.xml
 res/wgt/signature1.xml
-res/wgt/js/managers/storageManager.js
+res/wgt/js/utils/constants.js
