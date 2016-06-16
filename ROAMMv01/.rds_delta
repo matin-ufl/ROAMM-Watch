@@ -1,0 +1,9 @@
+#delete
+#add
+res/wgt/receive_data_quick.html
+#modify
+res/wgt/.DS_Store
+res/wgt/author-signature.xml
+res/wgt/signature1.xml
+res/wgt/js/managers/featureManager.js
+res/wgt/js/utils/config.js
