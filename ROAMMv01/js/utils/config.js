@@ -1,5 +1,5 @@
 // Watch configuration parameters
-var WATCH_ID = "6CE8";// my watches {6CE8, 8B87, 4405}
+var WATCH_ID = "8B87";// my watches {6CE8, 8B87, 4405}
 var RECEIVE_CONFIG_FROM_SERVER = false;
 var SAVE_LOCALLY = false;
 var SEND_TO_SERVER = true;
